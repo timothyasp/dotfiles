@@ -11,5 +11,40 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+#############################
+#  Aliases for server login #
+#############################
+
+alias cominor='ssh tasp@cominor.com'
+alias ta='ssh tasp@timasp.com'
+alias r_ta='ssh tasp@timasp.com'
+alias messy='ssh tasp@messyessay.com'
+alias beerbongs='ssh -p 2222 ctcurtis@174.132.188.37'
+alias ai='ssh tasp@ani.pe'
+
+#################################
+# Alias to multiple ls commands #
+#################################
+
+alias la='ls -Al'                # show hidden files
+alias ls='ls -aFG' # add colors and file type extensions
+alias lx='ls -lXB'               # sort by extension
+alias lk='ls -lSr'               # sort by size
+alias lc='ls -lcr'               # sort by change time
+alias lu='ls -lur'               # sort by access time
+alias lr='ls -lR'                # recursive ls
+alias lt='ls -ltr'               # sort by date
+alias lm='ls -al |more'          # pipe through 'more'
+
+# Alias chmod commands
+alias mx='chmod a+x'
+alias 000='chmod 000'
+alias 644='chmod 644'
+alias 755='chmod 755'
+
+alias ll='ls -lhG'
+alias mamp='cd /Applications/MAMP/htdocs'
+alias smart='cd /Applications/MAMP/htdocs/smart'
+
 # misc
 alias reload='. ~/.bash_profile'

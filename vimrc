@@ -4,6 +4,20 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -13,6 +27,15 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set shiftwidth=2    " for shift/tabbing
+set expandtab          " expand tabs with spaces
+set tabstop=2          " <Tab> move three characters
+set noerrorbells       " no beeps on errors
+"set textwidth=79       " hard wrap at 79 characters
+set modeline           " check for a modeline
+set softtabstop=2      " see spaces as tabs
+set scrolloff=5        " start scrolling when cursor is N lines from edge
+set number
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -82,7 +105,6 @@ endif " has("autocmd")
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
-set expandtab
 
 " Always display the status line
 set laststatus=2
@@ -204,4 +226,14 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+command! JIM JavaImportMissing
+command! JC JavaCorrect
+command! PP ProjectProblems
+
+function! JOI()
+	JavaImportMissing
+	JavaImportClean
+endfunction
+command! JOI :call JOI()
 
