@@ -1,16 +1,3 @@
-#. ~/.zsh/aliases
-
-# changing directory to code project
-function c { cd ~/code/$1; }
-
-# alternative to "rails" command to use templates
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
-}
-
 #############################
 #  Aliases for server login #
 #############################
@@ -35,6 +22,7 @@ alias lu='ls -lur'               # sort by access time
 alias lr='ls -lR'                # recursive ls
 alias lt='ls -ltr'               # sort by date
 alias lm='ls -al |more'          # pipe through 'more'
+alias ll='ls -lhG'
 
 # Alias chmod commands
 alias mx='chmod a+x'
@@ -42,10 +30,11 @@ alias 000='chmod 000'
 alias 644='chmod 644'
 alias 755='chmod 755'
 
-alias ll='ls -lhG'
+# some shortcuts
 alias mamp='cd /Applications/MAMP/htdocs'
-alias smart='cd /Applications/MAMP/htdocs/smartbar-rails'
-alias smartstyle='cd /Applications/MAMP/htdocs/smartbar-rails/public'
+alias smart='cd /Applications/MAMP/htdocs/smartbar'
+alias smartstyle='cd /Applications/MAMP/htdocs/smartbar/public'
 
 # misc
 alias reload='. ~/.bash_profile'
+alias src='source ~/.bashrc'
