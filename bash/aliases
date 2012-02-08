@@ -23,6 +23,7 @@ alias lr='ls -lR'                # recursive ls
 alias lt='ls -ltr'               # sort by date
 alias lm='ls -al |more'          # pipe through 'more'
 alias ll='ls -lhG'
+#alias ll='ls -alF'
 
 # Alias chmod commands
 alias mx='chmod a+x'
@@ -34,6 +35,10 @@ alias 755='chmod 755'
 alias mamp='cd /Applications/MAMP/htdocs'
 alias smart='cd /Applications/MAMP/htdocs/smartbar'
 alias smartstyle='cd /Applications/MAMP/htdocs/smartbar/public'
+
+alias slo='cd /srv/www/sloopenhouse.com/public_html'
+alias ohh='cd /srv/www/openhouseholdings.com/public_html'
+alias tim='cd /srv/www/timasp.com/public_html'
 
 # misc
 alias reload='. ~/.bash_profile'

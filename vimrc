@@ -20,9 +20,16 @@
  set autoindent
  set smartindent
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs
+"
+ set expandtab             " Expand tabs with spaces.
+ set softtabstop=3         " See spaces as tabs.
+ set tabstop=3             " <Tab> move three characters.
+ set shiftwidth=3          " >> and << shift 3 spaces.
+
  set background=light      " Background light, so foreground not bold.
  set backspace=2           " Allow <BS> to go past last insert.
- set expandtab             " Expand tabs with spaces.
  set nofoldenable          " Disable folds; toggle with zi.
  set gdefault              " Assume :s uses /g.
  set ignorecase            " Ignore case in search patterns.
@@ -35,13 +42,10 @@
  set number                " Display line numbers.
  set ruler                 " Display row, column and % of document.
  set scrolloff=10          " Keep min of 10 lines above/below cursor.
- set shiftwidth=3          " >> and << shift 3 spaces.
  set showcmd               " Show partial commands in the status line.
  set showmatch             " Show matching () {} etc..
  set showmode              " Show current mode.
  set smartcase             " Searches are case-sensitive if caps used.
- set softtabstop=3         " See spaces as tabs.
- set tabstop=3             " <Tab> move three characters.
  set textwidth=79          " Hard wrap at 79 characters.
  set virtualedit=block     " Allow the cursor to go where there's no char.
  set wildmode=longest,list " Tab completion works like bash.
@@ -100,10 +104,10 @@
 
 " Execute an :lcd to the directory of the file being edited.
  function LcdToCurrent()
-     let dir = expand("%:h")
-         execute "lcd " . dir
-         endfunction
-         noremap <Leader>cd :call LcdToCurrent()<CR>
+    let dir = expand("%:h")
+    execute "lcd " . dir
+ endfunction
+ noremap <Leader>cd :call LcdToCurrent()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Insert mode cartography
@@ -121,8 +125,8 @@
    else
       return "\<C-N>"
    endif
-endfunction
-inoremap <Tab> <C-R>=TabOrComplete()<CR>
+ endfunction
+ inoremap <Tab> <C-R>=TabOrComplete()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
