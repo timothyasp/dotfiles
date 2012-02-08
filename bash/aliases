@@ -27,7 +27,7 @@ alias ai='ssh tasp@ani.pe'
 #################################
 
 alias la='ls -Al'                # show hidden files
-alias ls='ls -aFG' # add colors and file type extensions
+alias ls='ls -aFG'               # add colors and file type extensions
 alias lx='ls -lXB'               # sort by extension
 alias lk='ls -lSr'               # sort by size
 alias lc='ls -lcr'               # sort by change time
@@ -44,7 +44,8 @@ alias 755='chmod 755'
 
 alias ll='ls -lhG'
 alias mamp='cd /Applications/MAMP/htdocs'
-alias smart='cd /Applications/MAMP/htdocs/smart'
+alias smart='cd /Applications/MAMP/htdocs/smartbar-rails'
+alias smartstyle='cd /Applications/MAMP/htdocs/smartbar-rails/public'
 
 # misc
 alias reload='. ~/.bash_profile'
