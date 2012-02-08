@@ -2,8 +2,7 @@ These are config files to set up a system the way I like it. Forked from ryanb (
 
 == Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/timothyasp/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
-
 
