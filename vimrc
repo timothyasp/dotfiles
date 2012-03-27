@@ -17,7 +17,6 @@
  syntax on                " Syntax highlighting.
 
  set autowrite             " Write before executing the 'make' command.
- set autoindent
  set smartindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -55,7 +54,6 @@
 " " Set some configuration variables.
 "
  let loaded_matchparen=1   " Don't do automatic bracket highlighting.
- let mapleader=","         " Use , instead of \ for the map leader.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Formatting settings
@@ -82,7 +80,7 @@
 
 " Gangster splits/finds
  :command! -nargs=+ Vfind :vsp | :find <args>
- :command! -nargs=+ Sfind :vsp | :find <args>
+ :command! -nargs=+ Sfind :sp | :find <args>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command mode cartography
@@ -109,28 +107,11 @@
  endfunction
  noremap <Leader>cd :call LcdToCurrent()<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Insert mode cartography
-"
-" Set up dictionary completion.
-" set dictionary+=~/.vim/dictionary/english-freq
-" set complete+=k
+let g:EasyMotion_leader_key = '<Leader>' 
 
-" Insert <Tab> or complete identifier if the cursor is after a keyword
-" character.
- function TabOrComplete()
-   let col = col('.')-1
-   if !col || getline('.')[col-1] !~ '\k'
-      return "\<tab>"
-   else
-      return "\<C-N>"
-   endif
- endfunction
- inoremap <Tab> <C-R>=TabOrComplete()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
-
 
 " Programming
  highl Comment gui=italic guifg=#d0a4ef ctermfg=lightMagenta
