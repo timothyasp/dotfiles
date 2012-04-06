@@ -33,12 +33,14 @@ alias 755='chmod 755'
 
 # some shortcuts
 alias mamp='cd /Applications/MAMP/htdocs'
-alias smart='cd /Applications/MAMP/htdocs/smart'
+alias smart='cd /Personal/Code/smart'
+alias 466='cd /Personal/Code/466'
 alias smartstyle='cd /Applications/MAMP/htdocs/smart/public'
 
 alias slo='cd /srv/www/sloopenhouse.com/public_html'
 alias ohh='cd /srv/www/openhouseholdings.com/public_html'
 alias tim='cd /srv/www/timasp.com/public_html'
+alias android='cd /Work/Code/iFixit-Workspace/iFixitAndroid'
 
 # misc
 alias reload='. ~/.bash_profile'

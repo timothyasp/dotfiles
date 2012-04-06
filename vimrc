@@ -4,20 +4,27 @@
 " 
 "
 
-" set path=~/Code/**      " Set this to the base of your Code directory or
+" Set this to the base of your Code directory
+set path=/Personal/Code/smart/**      
                           " wherever you want to find 
- set guioptions=aMm       " No toolbar in the gui; must be first in .vimrc.
+set guioptions=aMm       " No toolbar in the gui; must be first in .vimrc.
 
- behave xterm
+behave xterm
 
- set nocompatible         " No compatibility with vi.
- filetype on              " Recognize syntax by file extension.
- filetype indent on       " Check for indent file.
- filetype plugin on       " Allow plugins to be loaded by file type.
- syntax on                " Syntax highlighting.
+colorscheme corporation
 
- set autowrite             " Write before executing the 'make' command.
- set smartindent
+set nocompatible         " No compatibility with vi.
+filetype on              " Recognize syntax by file extension.
+filetype indent on       " Check for indent file.
+filetype plugin on       " Allow plugins to be loaded by file type.
+syntax on                " Syntax highlighting.
+
+if exists('+colorcolumn')
+ set cc=80
+endif
+
+set autowrite             " Write before executing the 'make' command.
+set smartindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
