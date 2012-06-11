@@ -2,22 +2,23 @@
 " Author: Shawn Tice, with lots of help from the internet. 
 " Modified by Tim Asp to his liking
 " 
-"
+set guioptions=aMm       " No toolbar in the gui; must be first in .vimrc.
+
+call pathogen#infect()
 
 " Set this to the base of your Code directory
 set path=/Personal/Code/smart/**      
+"set path=/Work/Code/iFixit-Workspace/iFixitAndroid/**
                           " wherever you want to find 
-set guioptions=aMm       " No toolbar in the gui; must be first in .vimrc.
 
 behave xterm
-
 colorscheme corporation
 
-set nocompatible         " No compatibility with vi.
-filetype on              " Recognize syntax by file extension.
-filetype indent on       " Check for indent file.
-filetype plugin on       " Allow plugins to be loaded by file type.
-syntax on                " Syntax highlighting.
+set nocompatible           " No compatibility with vi.
+filetype on                " Recognize syntax by file extension.
+"filetype indent on        " Check for indent file.
+syntax on                  " Syntax highlighting.
+filetype plugin indent on  " Allow plugins to be loaded by file type.
 
 if exists('+colorcolumn')
  set cc=80
@@ -57,6 +58,7 @@ set smartindent
  set wildmode=longest,list " Tab completion works like bash.
  set vb t_vb=".              
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " Set some configuration variables.
 "
@@ -73,7 +75,7 @@ set smartindent
 " o: Insert comment leader after hitting 'o' or 'O' in command mode.  n:
 " Auto-format lists, wrapping to text *after* the list bullet char.  l:
 " Don't auto-wrap if a line is already longer than textwidth.
- set formatoptions+=ronl
+" set formatoptions+=ronl
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-line cartography
@@ -114,9 +116,6 @@ set smartindent
  endfunction
  noremap <Leader>cd :call LcdToCurrent()<CR>
 
-let g:EasyMotion_leader_key = '<Leader>' 
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
 
@@ -136,9 +135,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " Restore the cursor when we can.
-"
-"
+" Restore the cursor when we can.
 function! RestoreCursor()
   if line("'\"") <= line("$")
      normal! g`"

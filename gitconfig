@@ -1,0 +1,12 @@
+[user]
+	name = Timothy Asp
+	email = timothy.asp@gmail.com
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+[core]
+	editor = /usr/bin/vim
