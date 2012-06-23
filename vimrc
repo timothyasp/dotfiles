@@ -4,8 +4,6 @@
 " 
 set guioptions=aMm       " No toolbar in the gui; must be first in .vimrc.
 
-call pathogen#infect()
-
 " Set this to the base of your Code directory
 set path=/Personal/Code/smart/**      
 "set path=/Work/Code/iFixit-Workspace/iFixitAndroid/**
