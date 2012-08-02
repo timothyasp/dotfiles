@@ -25,7 +25,7 @@
 " FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 " IN THE SOFTWARE.
 "
-" Section: Documentation {{{1
+" Section: Documentation 
 "
 " Provides functions to invoke various source control commands on the current
 " file (either the current buffer, or, in the case of an directory buffer, the
@@ -38,7 +38,7 @@
 " text '{VCSType}', which would be replaced in actual usage with 'CVS' or
 " 'SVN', for instance.
 "
-" Command documentation {{{2
+" Command documentation 
 "
 " VCSAdd           Adds the current file to source control.
 "
@@ -143,7 +143,7 @@
 "                  command on a different file will close the previous vimdiff
 "                  buffers.
 "
-" Mapping documentation: {{{2
+" Mapping documentation: 
 "
 " By default, a mapping is defined for each command.  User-provided mappings
 " can be used instead by mapping to <Plug>CommandName, for instance:
@@ -169,7 +169,7 @@
 "   <Leader>cU VCSUnlock
 "   <Leader>cv VCSVimDiff
 "
-" Options documentation: {{{2
+" Options documentation: 
 "
 " Several variables are checked by the script to determine behavior as follow:
 "
@@ -262,7 +262,7 @@
 "   full file name of a given buffer.  If it matches, the second element will
 "   be used as the VCS type.
 "
-" Event documentation {{{2
+" Event documentation 
 "   For additional customization, VCSCommand.vim uses User event autocommand
 "   hooks.  Each event is in the VCSCommand group, and different patterns
 "   match the various hooks.
@@ -293,7 +293,7 @@
 "                              command executes to allow customization of,
 "                              for instance, window placement and focus.
 "
-" Section: Plugin header {{{1
+" Section: Plugin header 
 
 " loaded_VCSCommand is set to 1 when the initialization begins, and 2 when it
 " completes.  This allows various actions to only be taken by functions after
@@ -316,7 +316,7 @@ endif
 let s:save_cpo=&cpo
 set cpo&vim
 
-" Section: Event group setup {{{1
+" Section: Event group setup 
 
 augroup VCSCommand
 augroup END
@@ -324,15 +324,15 @@ augroup END
 augroup VCSCommandCommit
 augroup END
 
-" Section: Plugin initialization {{{1
+" Section: Plugin initialization 
 silent do VCSCommand User VCSPluginInit
 
-" Section: Constants declaration {{{1
+" Section: Constants declaration 
 
 let g:VCSCOMMAND_IDENTIFY_EXACT = 1
 let g:VCSCOMMAND_IDENTIFY_INEXACT = -1
 
-" Section: Script variable initialization {{{1
+" Section: Script variable initialization 
 
 " Hidden functions for use by extensions
 let s:VCSCommandUtility = {}
@@ -355,9 +355,9 @@ unlet! s:vimDiffSourceBuffer
 "
 unlet! s:vimDiffScratchList
 
-" Section: Utility functions {{{1
+" Section: Utility functions 
 
-" Function: s:ReportError(mapping) {{{2
+" Function: s:ReportError(mapping) 
 " Displays the given error in a consistent faction.  This is intended to be
 " invoked from a catch statement.
 
@@ -365,7 +365,7 @@ function! s:ReportError(error)
 	echohl WarningMsg|echomsg 'VCSCommand:  ' . a:error|echohl None
 endfunction
 
-" Function s:VCSCommandUtility.system(...) {{{2
+" Function s:VCSCommandUtility.system(...) 
 " Replacement for system() function.  This version protects the quoting in the
 " command line on Windows systems.
 
@@ -383,7 +383,7 @@ function! s:VCSCommandUtility.system(...)
 	endtry
 endfunction
 
-" Function: s:CreateMapping(shortcut, expansion, display) {{{2
+" Function: s:CreateMapping(shortcut, expansion, display) 
 " Creates the given mapping by prepending the contents of
 " 'VCSCommandMapPrefix' (by default '<Leader>c') to the given shortcut and
 " mapping it to the given plugin function.  If a mapping exists for the
@@ -403,7 +403,7 @@ function! s:CreateMapping(shortcut, expansion, display)
 	endif
 endfunction
 
-" Function: s:ExecuteExtensionMapping(mapping) {{{2
+" Function: s:ExecuteExtensionMapping(mapping) 
 " Invokes the appropriate extension mapping depending on the type of the
 " current buffer.
 
@@ -419,7 +419,7 @@ function! s:ExecuteExtensionMapping(mapping)
 	silent execute 'normal' ':' .  s:plugins[vcsType][2][a:mapping] . "\<CR>"
 endfunction
 
-" Function: s:ExecuteVCSCommand(command, argList) {{{2
+" Function: s:ExecuteVCSCommand(command, argList) 
 " Calls the indicated plugin-specific VCS command on the current buffer.
 " Returns: buffer number of resulting output scratch buffer, or -1 if an error
 " occurs.
@@ -456,7 +456,7 @@ function! s:ExecuteVCSCommand(command, argList)
 	endtry
 endfunction
 
-" Function: s:GenerateResultBufferName(command, originalBuffer, vcsType, statusText) {{{2
+" Function: s:GenerateResultBufferName(command, originalBuffer, vcsType, statusText) 
 " Default method of generating the name for VCS result buffers.  This can be
 " overridden with the VCSResultBufferNameFunction variable.
 
@@ -476,7 +476,7 @@ function! s:GenerateResultBufferName(command, originalBuffer, vcsType, statusTex
 	return versionedBufferName
 endfunction
 
-" Function: s:GenerateResultBufferNameWithExtension(command, originalBuffer, vcsType, statusText) {{{2
+" Function: s:GenerateResultBufferNameWithExtension(command, originalBuffer, vcsType, statusText) 
 " Method of generating the name for VCS result buffers that uses the original
 " file name with the VCS type and command appended as extensions.
 
@@ -496,7 +496,7 @@ function! s:GenerateResultBufferNameWithExtension(command, originalBuffer, vcsTy
 	return versionedBufferName
 endfunction
 
-" Function: s:EditFile(command, originalBuffer, statusText) {{{2
+" Function: s:EditFile(command, originalBuffer, statusText) 
 " Creates a new buffer of the given name and associates it with the given
 " original buffer.
 
@@ -524,7 +524,7 @@ function! s:EditFile(command, originalBuffer, statusText)
 	endtry
 endfunction
 
-" Function: s:SetupScratchBuffer(command, vcsType, originalBuffer, statusText) {{{2
+" Function: s:SetupScratchBuffer(command, vcsType, originalBuffer, statusText) 
 " Creates convenience buffer variables and the name of a vcscommand result
 " buffer.
 
@@ -556,7 +556,7 @@ function! s:SetupScratchBuffer(command, vcsType, originalBuffer, statusText)
 	silent noautocmd file `=name`
 endfunction
 
-" Function: s:SetupBuffer() {{{2
+" Function: s:SetupBuffer() 
 " Attempts to set the b:VCSCommandBufferInfo variable
 
 function! s:SetupBuffer()
@@ -587,7 +587,7 @@ function! s:SetupBuffer()
 	let b:VCSCommandBufferSetup = 1
 endfunction
 
-" Function: s:MarkOrigBufferForSetup(buffer) {{{2
+" Function: s:MarkOrigBufferForSetup(buffer) 
 " Resets the buffer setup state of the original buffer for a given VCS scratch
 " buffer.
 " Returns:  The VCS buffer number in a passthrough mode.
@@ -604,7 +604,7 @@ function! s:MarkOrigBufferForSetup(buffer)
 	return a:buffer
 endfunction
 
-" Function: s:OverrideOption(option, [value]) {{{2
+" Function: s:OverrideOption(option, [value]) 
 " Provides a temporary override for the given VCS option.  If no value is
 " passed, the override is disabled.
 
@@ -619,7 +619,7 @@ function! s:OverrideOption(option, ...)
 	endif
 endfunction
 
-" Function: s:WipeoutCommandBuffers() {{{2
+" Function: s:WipeoutCommandBuffers() 
 " Clears all current VCS output buffers of the specified type for a given source.
 
 function! s:WipeoutCommandBuffers(originalBuffer, VCSCommand)
@@ -634,7 +634,7 @@ function! s:WipeoutCommandBuffers(originalBuffer, VCSCommand)
 	endwhile
 endfunction
 
-" Function: s:VimDiffRestore(vimDiffBuff) {{{2
+" Function: s:VimDiffRestore(vimDiffBuff) 
 " Checks whether the given buffer is one whose deletion should trigger
 " restoration of an original buffer after it was diffed.  If so, it executes
 " the appropriate setting command stored with that original buffer.
@@ -696,9 +696,9 @@ function! s:VimDiffRestore(vimDiffBuff)
 	endtry
 endfunction
 
-" Section: Generic VCS command functions {{{1
+" Section: Generic VCS command functions 
 
-" Function: s:VCSAnnotate(...) {{{2
+" Function: s:VCSAnnotate(...) 
 function! s:VCSAnnotate(bang, ...)
 	try
 		let line = line('.')
@@ -756,7 +756,7 @@ function! s:VCSAnnotate(bang, ...)
 	endtry
 endfunction
 
-" Function: s:VCSCommit() {{{2
+" Function: s:VCSCommit() 
 function! s:VCSCommit(bang, message)
 	try
 		let vcsType = VCSCommandGetVCSType(bufnr('%'))
@@ -794,13 +794,14 @@ function! s:VCSCommit(bang, message)
 		silent put ='VCS: ----------------------------------------------------------------------'
 		$
 		setlocal nomodified
+		silent do VCSCommand User VCSBufferCreated
 	catch
 		call s:ReportError(v:exception)
 		return -1
 	endtry
 endfunction
 
-" Function: s:VCSFinishCommitWithBuffer() {{{2
+" Function: s:VCSFinishCommitWithBuffer() 
 " Wrapper for s:VCSFinishCommit which is called only from a commit log buffer
 " which removes all lines starting with 'VCS:'.
 
@@ -816,28 +817,22 @@ function! s:VCSFinishCommitWithBuffer()
 	return resultBuffer
 endfunction
 
-" Function: s:VCSFinishCommit(logMessageList, originalBuffer) {{{2
+" Function: s:VCSFinishCommit(logMessageList, originalBuffer) 
 function! s:VCSFinishCommit(logMessageList, originalBuffer)
-	let shellSlashBak = &shellslash
+	let messageFileName = tempname()
+	call writefile(a:logMessageList, messageFileName)
 	try
-		set shellslash
-		let messageFileName = tempname()
-		call writefile(a:logMessageList, messageFileName)
-		try
-			let resultBuffer = s:ExecuteVCSCommand('Commit', [messageFileName])
-			if resultBuffer < 0
-				return resultBuffer
-			endif
-			return s:MarkOrigBufferForSetup(resultBuffer)
-		finally
-			call delete(messageFileName)
-		endtry
+		let resultBuffer = s:ExecuteVCSCommand('Commit', [messageFileName])
+		if resultBuffer < 0
+			return resultBuffer
+		endif
+		return s:MarkOrigBufferForSetup(resultBuffer)
 	finally
-		let &shellslash = shellSlashBak
+		call delete(messageFileName)
 	endtry
 endfunction
 
-" Function: s:VCSGotoOriginal(bang) {{{2
+" Function: s:VCSGotoOriginal(bang) 
 function! s:VCSGotoOriginal(bang)
 	let originalBuffer = VCSCommandGetOriginalBuffer(bufnr('%'))
 	if originalBuffer > 0
@@ -860,7 +855,7 @@ function! s:VCSGotoOriginal(bang)
 	endif
 endfunction
 
-function! s:VCSDiff(...)  "{{{2
+function! s:VCSDiff(...)  
 	let resultBuffer = s:ExecuteVCSCommand('Diff', a:000)
 	if resultBuffer > 0
 		let &filetype = 'diff'
@@ -870,7 +865,7 @@ function! s:VCSDiff(...)  "{{{2
 	return resultBuffer
 endfunction
 
-function! s:VCSReview(...)  "{{{2
+function! s:VCSReview(...)  
 	let resultBuffer = s:ExecuteVCSCommand('Review', a:000)
 	if resultBuffer > 0
 		let &filetype = getbufvar(b:VCSCommandOriginalBuffer, '&filetype')
@@ -878,7 +873,7 @@ function! s:VCSReview(...)  "{{{2
 	return resultBuffer
 endfunction
 
-" Function: s:VCSVimDiff(...) {{{2
+" Function: s:VCSVimDiff(...) 
 function! s:VCSVimDiff(...)
 	try
 		let vcsType = VCSCommandGetVCSType(bufnr('%'))
@@ -1001,9 +996,9 @@ function! s:VCSVimDiff(...)
 	endtry
 endfunction
 
-" Section: Public functions {{{1
+" Section: Public functions 
 
-" Function: VCSCommandGetVCSType() {{{2
+" Function: VCSCommandGetVCSType() 
 " Sets the b:VCSCommandVCSType variable in the given buffer to the
 " appropriate source control system name.
 "
@@ -1049,7 +1044,7 @@ function! VCSCommandGetVCSType(buffer)
 	endif
 endfunction
 
-" Function: VCSCommandChdir(directory) {{{2
+" Function: VCSCommandChdir(directory) 
 " Changes the current directory, respecting :lcd changes.
 
 function! VCSCommandChdir(directory)
@@ -1060,7 +1055,7 @@ function! VCSCommandChdir(directory)
 	execute command escape(a:directory, ' ')
 endfunction
 
-" Function: VCSCommandChangeToCurrentFileDir() {{{2
+" Function: VCSCommandChangeToCurrentFileDir() 
 " Go to the directory in which the given file is located.
 
 function! VCSCommandChangeToCurrentFileDir(fileName)
@@ -1072,7 +1067,7 @@ function! VCSCommandChangeToCurrentFileDir(fileName)
 	return oldCwd
 endfunction
 
-" Function: VCSCommandGetOriginalBuffer(vcsBuffer) {{{2
+" Function: VCSCommandGetOriginalBuffer(vcsBuffer) 
 " Attempts to locate the original file to which VCS operations were applied
 " for a given buffer.
 
@@ -1091,7 +1086,7 @@ function! VCSCommandGetOriginalBuffer(vcsBuffer)
 	endif
 endfunction
 
-" Function: VCSCommandRegisterModule(name, file, commandMap) {{{2
+" Function: VCSCommandRegisterModule(name, file, commandMap) 
 " Allows VCS modules to register themselves.
 
 function! VCSCommandRegisterModule(name, path, commandMap, mappingMap)
@@ -1107,7 +1102,7 @@ function! VCSCommandRegisterModule(name, path, commandMap, mappingMap)
 	return s:VCSCommandUtility
 endfunction
 
-" Function: VCSCommandDoCommand(cmd, cmdName, statusText, [options]) {{{2
+" Function: VCSCommandDoCommand(cmd, cmdName, statusText, [options]) 
 " General skeleton for VCS function execution.  The given command is executed
 " after appending the current buffer name (or substituting it for
 " <VCSCOMMANDFILE>, if such a token is present).  The output is captured in a
@@ -1203,7 +1198,7 @@ function! VCSCommandDoCommand(cmd, cmdName, statusText, options)
 	return bufnr('%')
 endfunction
 
-" Function: VCSCommandGetOption(name, default) {{{2
+" Function: VCSCommandGetOption(name, default) 
 " Grab a user-specified option to override the default provided.  Options are
 " searched in the window, buffer, then global spaces.
 
@@ -1221,7 +1216,7 @@ function! VCSCommandGetOption(name, default)
 	endif
 endfunction
 
-" Function: VCSCommandDisableBufferSetup() {{{2
+" Function: VCSCommandDisableBufferSetup() 
 " Global function for deactivating the buffer autovariables.
 
 function! VCSCommandDisableBufferSetup()
@@ -1229,7 +1224,7 @@ function! VCSCommandDisableBufferSetup()
 	silent! augroup! VCSCommandPlugin
 endfunction
 
-" Function: VCSCommandEnableBufferSetup() {{{2
+" Function: VCSCommandEnableBufferSetup() 
 " Global function for activating the buffer autovariables.
 
 function! VCSCommandEnableBufferSetup()
@@ -1246,7 +1241,7 @@ function! VCSCommandEnableBufferSetup()
 	endif
 endfunction
 
-" Function: VCSCommandGetStatusLine() {{{2
+" Function: VCSCommandGetStatusLine() 
 " Default (sample) status line entry for VCS-controlled files.  This is only
 " useful if VCS-managed buffer mode is on (see the VCSCommandEnableBufferSetup
 " variable for how to do this).
@@ -1268,8 +1263,8 @@ function! VCSCommandGetStatusLine()
 	endif
 endfunction
 
-" Section: Command definitions {{{1
-" Section: Primary commands {{{2
+" Section: Command definitions 
+" Section: Primary commands 
 com! -nargs=* VCSAdd call s:MarkOrigBufferForSetup(s:ExecuteVCSCommand('Add', [<f-args>]))
 com! -nargs=* -bang VCSAnnotate call s:VCSAnnotate(<q-bang>, <f-args>)
 com! -nargs=* -bang VCSBlame call s:VCSAnnotate(<q-bang>, <f-args>)
@@ -1288,14 +1283,14 @@ com! -nargs=* VCSUnlock call s:MarkOrigBufferForSetup(s:ExecuteVCSCommand('Unloc
 com! -nargs=0 VCSUpdate call s:MarkOrigBufferForSetup(s:ExecuteVCSCommand('Update', []))
 com! -nargs=* VCSVimDiff call s:VCSVimDiff(<f-args>)
 
-" Section: VCS buffer management commands {{{2
+" Section: VCS buffer management commands 
 com! VCSCommandDisableBufferSetup call VCSCommandDisableBufferSetup()
 com! VCSCommandEnableBufferSetup call VCSCommandEnableBufferSetup()
 
 " Allow reloading VCSCommand.vim
 com! VCSReload let savedPlugins = s:plugins|let s:plugins = {}|aunmenu Plugin.VCS|unlet! g:loaded_VCSCommand|runtime plugin/vcscommand.vim|for plugin in values(savedPlugins)|execute 'source' plugin[0]|endfor|unlet savedPlugins
 
-" Section: Plugin command mappings {{{1
+" Section: Plugin command mappings 
 nnoremap <silent> <Plug>VCSAdd :VCSAdd<CR>
 nnoremap <silent> <Plug>VCSAnnotate :VCSAnnotate<CR>
 nnoremap <silent> <Plug>VCSCommit :VCSCommit<CR>
@@ -1314,7 +1309,7 @@ nnoremap <silent> <Plug>VCSUnlock :VCSUnlock<CR>
 nnoremap <silent> <Plug>VCSUpdate :VCSUpdate<CR>
 nnoremap <silent> <Plug>VCSVimDiff :VCSVimDiff<CR>
 
-" Section: Default mappings {{{1
+" Section: Default mappings 
 
 let s:defaultMappings = [
 			\['a', 'VCSAdd'],
@@ -1342,7 +1337,7 @@ if !VCSCommandGetOption('VCSCommandDisableMappings', 0)
 	endfor
 endif
 
-" Section: Menu items {{{1
+" Section: Menu items 
 amenu <silent> &Plugin.VCS.&Add        <Plug>VCSAdd
 amenu <silent> &Plugin.VCS.A&nnotate   <Plug>VCSAnnotate
 amenu <silent> &Plugin.VCS.&Commit     <Plug>VCSCommit
@@ -1356,24 +1351,24 @@ amenu <silent> &Plugin.VCS.&Status     <Plug>VCSStatus
 amenu <silent> &Plugin.VCS.&Update     <Plug>VCSUpdate
 amenu <silent> &Plugin.VCS.&VimDiff    <Plug>VCSVimDiff
 
-" Section: Autocommands to restore vimdiff state {{{1
+" Section: Autocommands to restore vimdiff state 
 augroup VimDiffRestore
 	au!
 	au BufUnload * call s:VimDiffRestore(str2nr(expand('<abuf>')))
 augroup END
 
-" Section: Optional activation of buffer management {{{1
+" Section: Optional activation of buffer management 
 
 if VCSCommandGetOption('VCSCommandEnableBufferSetup', 0)
 	call VCSCommandEnableBufferSetup()
 endif
 
-" Section: VIM shutdown hook {{{1
+" Section: VIM shutdown hook 
 
 " Close all result buffers when VIM exits, to prevent them from being restored
 " via viminfo.
 
-" Function: s:CloseAllResultBuffers() {{{2
+" Function: s:CloseAllResultBuffers() 
 " Closes all vcscommand result buffers.
 function! s:CloseAllResultBuffers()
 	" This avoids using bufdo as that may load buffers already loaded in another
@@ -1393,7 +1388,7 @@ augroup VCSCommandVIMShutdown
 	au VimLeavePre * call s:CloseAllResultBuffers()
 augroup END
 
-" Section: Plugin completion {{{1
+" Section: Plugin completion 
 
 let loaded_VCSCommand = 2
 

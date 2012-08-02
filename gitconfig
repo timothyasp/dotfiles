@@ -1,8 +1,8 @@
 [user]
-	name = Timothy Asp
+	name = Tim Asp
 	email = timothy.asp@gmail.com
 [color]
-	ui = auto
+	ui = true
 [alias]
 	st = status
 	ci = commit
