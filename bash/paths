@@ -3,5 +3,6 @@ export PATH=$PATH:/opt/node/bin
 export PATH=$PATH:/usr/java
 export PATH=$PATH:/Users/tasp/Code/android/lib/android-sdk-macosx/platform-tools:/Users/tasp/Code/android/lib/android-sdk-macosx/tools
 export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export EDITOR=vim

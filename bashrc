@@ -2,7 +2,6 @@ source ~/.bash/aliases
 #source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
-PS1="[\t][\u@\h:\w]\$ "
 
 function xtitle()      # Adds some text in the terminal frame.
 {
