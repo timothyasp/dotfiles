@@ -84,7 +84,9 @@ cnoremap <C-U> <C-E><C-U>
 noremap Q gq
 
 " Toggle paste mode.
-noremap <Leader>p :set paste!<CR>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " Open the file under the cursor in a new tab.
 noremap <Leader>ot <C-W>gf
