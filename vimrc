@@ -74,8 +74,8 @@ cnoremap <Esc>f <S-Right>
 cnoremap <C-U> <C-E><C-U>
 
 " Stupid shift mistakes.
-:command W w
-:command Q q
+":command W w
+":command Q q
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command mode cartography
@@ -106,15 +106,15 @@ set complete+=k
 
 " Insert <Tab> or complete identifier if the cursor is after a keyword
 " character.
-function TabOrComplete()
-    let col = col('.')-1
-    if !col || getline('.')[col-1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<C-N>"
-     endif
-endfunction
-inoremap <Tab> <C-R>=TabOrComplete()<CR>
+"function TabOrComplete()
+"    let col = col('.')-1
+"    if !col || getline('.')[col-1] !~ '\k'
+"        return "\<tab>"
+"    else
+"        return "\<C-N>"
+"     endif
+"endfunction
+"inoremap <Tab> <C-R>=TabOrComplete()<CR>
 
 " Make C-s write the buffer and return to insert mode when applicable
 inoremap <C-s> <C-O>:w<CR>
@@ -223,5 +223,6 @@ set laststatus=2
 "hi IndentGuidesOdd  ctermbg=white
 "hi IndentGuidesEven ctermbg=lightgrey
 
-nnoremap <C-o>c yiw:find <C-r>".php<CR>
+"nnoremap <C-o>c yiw:find <C-r>".php<CR>
 
+au BufNewFile,BufRead *.ejs set filetype=html

@@ -10,3 +10,5 @@
 	br = branch
 [core]
 	editor = /usr/bin/vim
+[credential]
+	helper = osxkeychain
