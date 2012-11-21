@@ -34,3 +34,6 @@ alias 755='chmod 755'
 # misc
 alias reload='. ~/.bash_profile'
 alias src='source ~/.bashrc'
+
+# shortcuts
+alias android='cd ~/Code/android/ifixit/iFixitAndroid'
