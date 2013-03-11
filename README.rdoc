@@ -1,3 +1,8 @@
 = dotfiles
 
 System config files I use.
+
+
+== installation
+
+    rake install
