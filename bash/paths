@@ -1,8 +1,20 @@
-export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export PATH=$PATH:/opt/node/bin
-export PATH=$PATH:/usr/java
-export PATH=$PATH:/Users/tasp/Code/android/lib/android-sdk-macosx/platform-tools:/Users/tasp/Code/android/lib/android-sdk-macosx/tools
+### General
+export PATH="~/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/node/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### MAVEN exports
+export M2_HOME=/usr/local/maven3
+export M2=$M2_HOME/bin
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_32-b05-420.jdk/Contents/Home
+export PATH="$M2:$JAVA_HOME/bin:$PATH"
+
+### Android
+export ANDROID_HOME=/Users/tasp/Code/android/lib/android-sdk-macosx
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+
 export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export EDITOR=vim

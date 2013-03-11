@@ -2,11 +2,11 @@
 #  Aliases for server login #
 #############################
 
-alias cominor='ssh tasp@cominor.com'
-alias ta='ssh tasp@timasp.com'
-alias r_ta='ssh tasp@timasp.com'
+alias cominor='ssh tasp@cominor.com && clear'
+alias home='ssh tasp_timasp@ssh.phx.nearlyfreespeech.net'
 alias messy='ssh tasp@messyessay.com'
 alias beerbongs='ssh -p 2222 ctcurtis@174.132.188.37'
+alias bbfwp='ssh tasp_beerbongsforworldpeace@ssh.phx.nearlyfreespeech.net'
 alias ai='ssh tasp@ani.pe'
 
 #################################
@@ -37,3 +37,6 @@ alias src='source ~/.bashrc'
 
 # shortcuts
 alias android='cd ~/Code/android/ifixit/iFixitAndroid'
+
+# node-webkit
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
