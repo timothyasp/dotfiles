@@ -1,0 +1,12 @@
+[submodule "vim"]
+	path = vim
+	url = https://github.com/timothyasp/.vim
+[submodule "fonts/powerline-fonts"]
+	path = fonts/powerline-fonts
+	url = git@github.com:Lokaltog/powerline-fonts.git
+[submodule "scripts/tmux-powerline"]
+	path = scripts/tmux-powerline
+	url = git@github.com:timothyasp/tmux-powerline.git
+[submodule "scripts/tmux-colors-solarized"]
+	path = scripts/tmux-colors-solarized
+	url = git@github.com:seebi/tmux-colors-solarized.git
