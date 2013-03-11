@@ -1,8 +1,3 @@
-These are config files to set up a system the way I like it. Forked from ryanb (http://github.com/ryanb) Thanks!
+= dotfiles
 
-== Installation
-
-  git clone git://github.com/timothyasp/dotfiles ~/.dotfiles
-  cd ~/.dotfiles
-  rake install
-
+System config files I use.
