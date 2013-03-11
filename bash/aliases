@@ -46,3 +46,12 @@ alias top='xtitle Processes on $HOST && top'
 alias make='xtitle Making $(basename $PWD) ; make'
 alias ncftp="xtitle ncFTP ; ncftp"
 
+#------------------
+# Work Aliases
+#------------------
+
+alias sup="updateCodeDirs.sh"
+
+# start tmux in 256 color support
+alias tmux="tmux -2"
+

@@ -26,3 +26,8 @@ fi
 #gfind () { find . -name "${1}" -a ! -wholename '*/.*' -exec grep -Hin ${3} "${2}" {} \; ; }
 gfind () { if [ $# -lt 2 ]; then files="*"; search="${1}"; else files="${1}"; search="${2}"; fi; find -P . -name "$files" -a ! -wholename '*/.*' -exec grep -Hin ${3} "$search" {} \; ; }
 
+alias ll='ls -lh --color'
+alias fs='feature switch'
+alias diffg="git diff --no-index"
+
+eval `dircolors ~/.dotfiles/colors/dircolors.ansi-dark`

@@ -16,5 +16,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin
 
+export PATH=$PATH:/home/tasp/Code/3P/lessphp/lessc.inc.php:/home/tasp/Code/3P/lessphp/plessc
+export PATH=$PATH:/home/tasp/Code/node_modules/.bin
+
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export EDITOR=vim

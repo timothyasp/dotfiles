@@ -1,6 +1,16 @@
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 source ~/.bash/helpers
 source ~/.bash/aliases
-source ~/.bash/completions
+#source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
 
+# setup bashmarks
+source ~/.local/bin/bashmarks.sh
+
+#source ~/.bash_alias_completion
