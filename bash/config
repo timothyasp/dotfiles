@@ -6,7 +6,7 @@ BLU="\[\033[34m\]"
 PUR="\[\033[35m\]"
 WHI="\[\033[37m\]"
 NUL="\[\033[0m\]"
-export PS1="${BLU}\u${WHI}@${PUR}\H ${GRE}\t ${PUR}\W${NUL} > "
+export PS1="\n${YEL}\$(__git_ps1 "[%s]")${NUL} ${BLU}[\@]${NUL}\n${WHI}↳ ${NUL} ${YEL}♕ ${NUL} ${BLU}\w${NUL} ${YEL}▶${NUL} "
 export EDITOR="vim"
 
 # enable color support of ls and also add handy aliases
