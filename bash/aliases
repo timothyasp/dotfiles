@@ -22,7 +22,7 @@ alias lu='ls -lur'               # sort by access time
 alias lr='ls -lR'                # recursive ls
 alias lt='ls -ltr'               # sort by date
 alias lm='ls -al |more'          # pipe through 'more'
-alias ll='ls -lhG'
+alias ll='ls -laFG'
 #alias ll='ls -alF'
 
 # Alias chmod commands
@@ -35,8 +35,8 @@ alias 755='chmod 755'
 alias reload='. ~/.bash_profile'
 alias src='source ~/.bashrc'
 
-# shortcuts
-alias android='cd ~/Code/android/ifixit/iFixitAndroid'
+# start tmux in 256 color support
+alias tmux="tmux -2"
 
 # node-webkit
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
@@ -46,12 +46,17 @@ alias top='xtitle Processes on $HOST && top'
 alias make='xtitle Making $(basename $PWD) ; make'
 alias ncftp="xtitle ncFTP ; ncftp"
 
+# Git aliases 
+alias fs='feature switch'
+alias diffg="git diff --no-index"
+
 #------------------
 # Work Aliases
 #------------------
 
 alias sup="updateCodeDirs.sh"
 
-# start tmux in 256 color support
-alias tmux="tmux -2"
-
+# usage: gfind '*.php' SearchString
+#gfind () { find . -name "${1}" -exec grep -Hin ${3} "${2}" {} \;; }
+#gfind () { find . -name "${1}" -a ! -wholename '*/.*' -exec grep -Hin ${3} "${2}" {} \; ; }
+gfind () { if [ $# -lt 2 ]; then files="*"; search="${1}"; else files="${1}"; search="${2}"; fi; find -P . -name "$files" -a ! -wholename '*/.*' -exec grep -Hin ${3} "$search" {} \; ; }

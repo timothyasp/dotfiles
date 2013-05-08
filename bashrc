@@ -11,6 +11,6 @@ source ~/.bash/paths
 source ~/.bash/config
 
 # setup bashmarks
-source ~/.local/bin/bashmarks.sh
+#source ~/.local/bin/bashmarks.sh
 
 #source ~/.bash_alias_completion
