@@ -66,5 +66,7 @@ function ii()   # Get current host related info.
    echo
 }
 
-
+function vimf() {
+   vim `gg -l $1` -c '/$1'
+}
 

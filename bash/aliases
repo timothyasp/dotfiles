@@ -35,9 +35,6 @@ alias 755='chmod 755'
 alias reload='. ~/.bash_profile'
 alias src='source ~/.bashrc'
 
-# start tmux in 256 color support
-alias tmux="tmux -2"
-
 # node-webkit
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
@@ -55,6 +52,8 @@ alias diffg="git diff --no-index"
 #------------------
 
 alias sup="updateCodeDirs.sh"
+alias debug="tail -f /tmp/tasp_debug.log"
+alias tests="phpunit subdomain=tasp host=local"
 
 # usage: gfind '*.php' SearchString
 #gfind () { find . -name "${1}" -exec grep -Hin ${3} "${2}" {} \;; }

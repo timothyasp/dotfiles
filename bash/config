@@ -1,6 +1,6 @@
 
 # Make sure that we have __git_ps1 available
-source ~/.git-prompt.sh
+# source ~/.git-prompt.sh
 
 # Shell Variable Configuration
 RED="\[\033[31m\]"
@@ -10,7 +10,7 @@ BLU="\[\033[34m\]"
 PUR="\[\033[35m\]"
 WHI="\[\033[37m\]"
 NUL="\[\033[0m\]"
-export PS1="\n${YEL}\$(__git_ps1 "[%s]")${NUL} ${BLU}[\@]${NUL} ${GRE}[\w]${NUL} \n${WHI}↳ ${NUL} ${YEL}♕ ▶${NUL} "
+export PS1="\n${YEL}\$(__git_ps1 "[%s]")${NUL} ${BLU}[\@]${NUL} ${GRE}[\w]${NUL} \n${WHI}▶${NUL} "
 export EDITOR="vim"
 
 #eval `dircolors ~/.dotfiles/colors/dircolors.ansi-dark`
