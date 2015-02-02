@@ -5,72 +5,82 @@
 	ui = true
 [alias]
 	st = status
-    stv = status -s --untracked-files=all
+   stv = status -s --untracked-files=all
 	ci = commit
 	co = checkout
 	br = branch
-    cp = cherry-pick
-    cl = clone
-    b = branch
-    d = diff
-    # add to index hunk by hunk
-    ap = add -p
-    # revert modifications hunk by hun
-    cop = checkout -p
-    # unadd from index hunk by hun
-    unap = reset HEAD -p
-    ds = diff --cached
-    dc = diff --cached
-    detach = checkout HEAD@{0}
-    #grep on filename
-    f = "!git ls-files | grep -i"
+   cp = cherry-pick
+   cl = clone
+   b = branch
+   d = diff
+   # add to index hunk by hunk
+   ap = add -p
+   # revert modifications hunk by hun
+   cop = checkout -p
 
-    #merges
-    ours = "!f() { git co --ours $@ && git add $@; }; f"
-    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+	unadd = reset HEAD
 
-    # Show commits in short form, 1 line each
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    # List commits including changed files
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    # No color list, useful for piping to unix commands
-    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-    # List one line commits showing dates
-    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-    # One line commits showing relative dates
-    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-    # Short git log
-    le = log --oneline --decorate
+   # unadd from index hunk by hun
+   unap = reset HEAD -p
+   ds = diff --cached
+   dc = diff --cached
+   detach = checkout HEAD@{0}
+   #grep on filename
+   f = "!git ls-files | grep -i"
 
-    # History of file with diffs
-    filelog = log -u
-    fl = log -u
+   #merges
+   ours = "!f() { git co --ours $@ && git add $@; }; f"
+   theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
-    # show diff of last commit
-    dlc = diff --cached HEAD^
-    # Show modified files in last commit
-    dl = "!git ll -1"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	last = log --no-pager -20 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-    dr  = "!f() { git diff "$1"^.."$1"; }; f"
-    lc  = "!f() { git ll "$1"^.."$1"; }; f"
-    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+   # Show commits in short form, 1 line each
+   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+   # List commits including changed files
+   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+   # No color list, useful for piping to unix commands
+   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+   # List one line commits showing dates
+   lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+   # One line commits showing relative dates
+   ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+   # Short git log
+   le = log --oneline --decorate
 
-    # Reset mappings
-    r = reset
-    rs = reset --soft HEAD^
-    rh = reset --hard HEAD^
+   # History of file with diffs
+   filelog = log -u
+   fl = log -u
 
-    # Stash opts
-    sl = stash list
-    sa = stash apply
-    ss = stash save
+   # show diff of last commit
+   dlc = diff --cached HEAD^
+   # Show modified files in last commit
+   dl = "!git ll -1"
+
+   dr  = "!f() { git diff "$1"^.."$1"; }; f"
+   lc  = "!f() { git ll "$1"^.."$1"; }; f"
+   diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+   # Reset mappings
+   r = reset
+   rs = reset --soft HEAD^
+   rh = reset --hard HEAD^
+
+   # Stash opts
+   sl = stash list
+   sa = stash apply
+   ss = stash save
+
+# show the hash of HEAD
+   head = rev-parse HEAD
 [push]
-    default = current
+   default = current
 [pull]
-    default = current
+   default = current
+   rebase = preserve
 [branch]
-    autosetuprebase = always
+   autosetuprebase = always
 [core]
-	editor = /usr/bin/vim
+   editor = /usr/bin/vim
 [credential]
-	helper = osxkeychain
+   helper = osxkeychain
