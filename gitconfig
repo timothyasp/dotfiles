@@ -1,72 +1,72 @@
 [user]
-	name = Tim Asp
-	email = timothy.asp@gmail.com
+   name = Tim Asp
+   email = timothy.asp@gmail.com
 [color]
-	ui = true
+   ui = true
 [alias]
-	st = status
+   st = status
    stv = status -s --untracked-files=all
-	ci = commit
-	co = checkout
-	br = branch
+   ci = commit
+   co = checkout
+   br = branch
    cp = cherry-pick
    cl = clone
    b = branch
    d = diff
-   # add to index hunk by hunk
+# add to index hunk by hunk
    ap = add -p
-   # revert modifications hunk by hun
+# revert modifications hunk by hun
    cop = checkout -p
 
-	unadd = reset HEAD
+   unadd = reset HEAD
 
-   # unadd from index hunk by hun
+# unadd from index hunk by hun
    unap = reset HEAD -p
    ds = diff --cached
    dc = diff --cached
    detach = checkout HEAD@{0}
-   #grep on filename
+#grep on filename
    f = "!git ls-files | grep -i"
 
-   #merges
+#merges
    ours = "!f() { git co --ours $@ && git add $@; }; f"
    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	last = log --no-pager -20 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+   last = log --no-pager -20 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-   # Show commits in short form, 1 line each
+# Show commits in short form, 1 line each
    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-   # List commits including changed files
+# List commits including changed files
    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-   # No color list, useful for piping to unix commands
+# No color list, useful for piping to unix commands
    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-   # List one line commits showing dates
+# List one line commits showing dates
    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-   # One line commits showing relative dates
+# One line commits showing relative dates
    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-   # Short git log
+# Short git log
    le = log --oneline --decorate
 
-   # History of file with diffs
+# History of file with diffs
    filelog = log -u
    fl = log -u
 
-   # show diff of last commit
+# show diff of last commit
    dlc = diff --cached HEAD^
-   # Show modified files in last commit
+# Show modified files in last commit
    dl = "!git ll -1"
 
    dr  = "!f() { git diff "$1"^.."$1"; }; f"
    lc  = "!f() { git ll "$1"^.."$1"; }; f"
    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
 
-   # Reset mappings
+# Reset mappings
    r = reset
    rs = reset --soft HEAD^
    rh = reset --hard HEAD^
 
-   # Stash opts
+# Stash opts
    sl = stash list
    sa = stash apply
    ss = stash save
