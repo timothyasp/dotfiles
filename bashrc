@@ -10,3 +10,5 @@ source ~/.bash/aliases
 source ~/.bash/paths
 source ~/.bash/config
 
+# Source boxen's environment 
+source /opt/boxen/env.sh

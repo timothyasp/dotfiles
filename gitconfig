@@ -82,5 +82,6 @@
    autosetuprebase = always
 [core]
    editor = /usr/bin/vim
+   excludesfile = /opt/boxen/config/git/gitignore
 [credential]
-   helper = osxkeychain
+   helper = /opt/boxen/bin/boxen-git-credential
