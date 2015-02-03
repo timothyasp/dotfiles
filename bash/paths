@@ -1,13 +1,22 @@
 ### General
-export PATH="~/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/node/bin:$PATH"
+export PATH="~/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/node/bin:/$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### Meteorite, meteor package manager
+export PATH="/usr/local/share/npm/bin:$PATH"
+
+### AndroidViewClient
+export ANDROID_VIEW_CLIENT_HOME=/Users/tasp/Code/android/AndroidViewClient-4.6.0/AndroidViewClient
+
 ### MAVEN exports
-export M2_HOME=/usr/local/maven3
+export M2_HOME=/usr/local/maven
 export M2=$M2_HOME/bin
+export GRADLE_HOME=/usr/local/Cellar/gradle/1.6/libexec
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_32-b05-420.jdk/Contents/Home
+export PYTHONPATH=/Library/Python/2.7/site-packages/
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PATH="$M2:$JAVA_HOME/bin:$PATH"
 
 ### Android

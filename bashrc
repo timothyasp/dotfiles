@@ -10,5 +10,3 @@ source ~/.bash/aliases
 source ~/.bash/paths
 source ~/.bash/config
 
-# setup bashmarks
-source ~/.local/bin/bashmarks.sh

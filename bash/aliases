@@ -8,6 +8,8 @@ alias messy='ssh tasp@messyessay.com'
 alias beerbongs='ssh -p 2222 ctcurtis@174.132.188.37'
 alias bbfwp='ssh tasp_beerbongsforworldpeace@ssh.phx.nearlyfreespeech.net'
 alias ai='ssh tasp@ani.pe'
+alias gdoor='ssh pi@192.168.1.21'
+alias otf2ttf='for i in *.otf; do fontforge -script ~/.dotfiles/scripts/otf2ttf.sh $i; done'
 
 #################################
 # Alias to multiple ls commands #

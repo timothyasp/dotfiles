@@ -1,3 +1,10 @@
+function ass() {
+   DATE=`date`
+   FILE="./Android Screen Shot $DATE.png"
+
+   adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > "$FILE"
+}
+
 function xtitle()      # Adds some text in the terminal frame.
 {
    case "$TERM" in
