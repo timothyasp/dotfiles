@@ -1,6 +1,6 @@
 
 # Make sure that we have __git_ps1 available
-# source ~/.git-prompt.sh
+source ~/.git-prompt.sh
 
 # Shell Variable Configuration
 RED="\[\033[31m\]"
