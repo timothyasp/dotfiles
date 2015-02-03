@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>0595E9EC-78A1-415A-9525-AB79B7B55789</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>overlord</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Overlord</string>
+			<key>url</key>
+			<string>https://overlord.dozuki.com/Guide/search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B9096C87-1505-4A16-9E4B-4BFC000C04F3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>guide</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>iFixit Guides</string>
+			<key>url</key>
+			<string>http://www.ifixit.com/Guide/search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
